@@ -250,11 +250,11 @@ if __name__ == '__main__':
                 # применение методов распознавания объектов на изображении от Yolo
                 frame = apply_yolo_object_detection(frame)
 
-                # перевод в правильное цветовое пространство для OpenCV
-                frame = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
-                frame = cv2.resize(frame, (1920 // 2, 1080 // 2))
+                # перевод в цветовое пространство OpenCV
+                # frame = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
 
                 # вывод обработанного изображения на экран
+                frame = cv2.resize(frame, (1920 // 2, 1080 // 2))
                 cv2.imshow("Parking Lot", frame)
                 if cv2.waitKey(0):
                     break
