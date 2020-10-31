@@ -1,0 +1,7 @@
+.idea/*
+__pycache__/
+
+**/*.zip
+
+yolov3.cfg
+yolov3.weights
