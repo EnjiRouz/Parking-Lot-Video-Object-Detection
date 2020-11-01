@@ -3,6 +3,9 @@ Realtime transport means detection using image detection by Yolo. It can count f
 
 A public camera was found [here](https://www.insecam.org/en/bytag/Parking/)
 
+![screenshot](https://github.com/EnjiRouz/Parking-Lot-Video-Object-Detection/blob/master/screenshot.png)
+<h6 align="center">App Screenshot</h6>
+
 Обнаружение транспортных средств в режиме реального времени с использованием распознавания объектов на Yolo. Приложение может рассчитывать количество свободных парковочных мест и транспортных средств на стоянке
 
 Публичная камера была найдена [здесь](https://www.insecam.org/en/bytag/Parking/)
