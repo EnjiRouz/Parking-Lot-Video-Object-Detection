@@ -126,17 +126,22 @@ def draw_cars_count(img, count):
     mid_max = sum(mid_max_counts) / len(mid_max_counts)
     mid_max = int(np.ceil(mid_max))
 
-    color = (255, 255, 255)
-    start = (50, 120)
-    font_size = 1
+    # текст выводится с обводкой (чтобы было видно при разном освещении картинки)
+    white_color = (255, 255, 255)
+    black_outline_color = (0, 0, 0)
+
+    start = (45, 125)
+    font_size = 1.2
     font = cv2.FONT_HERSHEY_SIMPLEX
     width = 2
-    text = str(mid_max) + " transport means"
-    img = cv2.putText(img, text, start, font, font_size, color, width, cv2.LINE_AA)
+    text = str(mid_max) + " Transport Means"
+    img = cv2.putText(img, text, start, font, font_size, black_outline_color, width*3, cv2.LINE_AA)
+    img = cv2.putText(img, text, start, font, font_size, white_color, width, cv2.LINE_AA)
 
-    start = (50, 170)
-    text = str(parking_places - mid_max) + " free parking places"
-    img = cv2.putText(img, text, start, font, font_size, color, width, cv2.LINE_AA)
+    start = (45, 185)
+    text = str(parking_places - mid_max) + " Free Parking Places"
+    img = cv2.putText(img, text, start, font, font_size, black_outline_color, width*3, cv2.LINE_AA)
+    img = cv2.putText(img, text, start, font, font_size, white_color, width, cv2.LINE_AA)
     return img
 
 
