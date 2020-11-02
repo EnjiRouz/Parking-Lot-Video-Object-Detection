@@ -201,7 +201,7 @@ def apply_yolo_object_detection(img):
             selected_count += selected
 
         # debug-рисование объектов, входящих в искомые классы
-        # img = draw_object(img, class_index, box, selected)ы
+        # img = draw_object(img, class_index, box, selected)
 
     img = draw_cars_count(img, selected_count)
 
