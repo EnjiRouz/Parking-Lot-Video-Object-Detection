@@ -321,7 +321,8 @@ def input_and_check_the_validity_of_mail():
 # function for time insert
 def insert_time_and_check_validity():
     users_time = ""
-
+    
+    print("Give a notification time except 00:01!")
     valid_hour_inputs = [str(i) for i in range(0, 24)]
     users_input = input("Please give Hour (0 up to 23): ")
     while users_input not in valid_hour_inputs:
@@ -343,7 +344,11 @@ def insert_time_and_check_validity():
     if len(users_input) == 1:
         users_input = "0" + users_input
     users_time += users_input
-
+    
+    if users_time == "00:01":
+        print("System doesn't allow 00:01 as notification time, please try again!")
+        insert_time_and_check_validity()
+        
     return users_time
 
 
@@ -496,7 +501,7 @@ if __name__ == '__main__':
         notification has sent. So this will be a criterion of sending or not an email.
           
     '''
-    last_notification = "00:00"
+    last_notification = "00:01"
 
     # загрузка весов Yolo из файлов
     net = cv2.dnn.readNet("yolov3-tiny.weights", "yolov3-tiny.cfg")  # или "yolov3.weights" и "yolov3-tiny.cfg"
@@ -566,7 +571,7 @@ if __name__ == '__main__':
                             for email_address in Data_for_notification[element]:
                                 send_notification(email_address, apply_yolo_object_detection(frame)[1])
                             last_notification = element
-                        if str_Minnesota_time == "00:00":
+                        if str_Minnesota_time == "00:01":
                             last_notification = str_Minnesota_time
 
                     # 25 secs = 25000 ms - refreshes every 25 sec - use like method sleep()
