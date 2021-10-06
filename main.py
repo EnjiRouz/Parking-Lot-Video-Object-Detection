@@ -566,6 +566,8 @@ if __name__ == '__main__':
                             for email_address in Data_for_notification[element]:
                                 send_notification(email_address, apply_yolo_object_detection(frame)[1])
                             last_notification = element
+                        if str_Minnesota_time == "00:00":
+                            last_notification = str_Minnesota_time
 
                     # 25 secs = 25000 ms - refreshes every 25 sec - use like method sleep()
                     if cv2.waitKey(25000):
